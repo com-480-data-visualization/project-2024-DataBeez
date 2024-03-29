@@ -3,7 +3,7 @@
 | Student's name | SCIPER |
 | -------------- | ------ |
 | Tager Maria    | 311431 |
-| Jacquet-Francillon Elliot Philip| |
+| Jacquet-Francillon Elliot Philip| 316517 |
 | Hinard Killian | 312106 |
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
