@@ -31,7 +31,25 @@
 
         <div class="section" id="events_map">
             <div class="section-content">
-                <h1 class="title">Global Events</h1>
+                <div class="header">
+                    <h1>GLOBAL EVENT</h1>
+                    <!-- Round buttons -->
+                    <div class="round-buttons">
+                        <button class="stadium-button">1</button>
+                        <button class="stadium-button">2</button>
+                        <button class="stadium-button">3</button>
+                    </div>
+                </div>
+                <!-- Main content area with image and checkboxes -->
+                <div class="content">
+                    <div class="image-box">
+                        <img src="img/map.png" alt="Sketch of the map" width="500px" id="map">
+                    </div>
+                </div>
+                <!-- Slider at the bottom -->
+                <div class="slider">
+                    <input type="range" min="0" max="100" value="0" class="slider" id="sliderMap">
+                </div>
             </div>
         </div>
 
@@ -46,8 +64,11 @@
             </div>
         </div>
 
+
+        
         <div class="section" id="about">
             <div class="section-content">
+                <img id="dataBeezLogo" src="img/logo.png" alt="Data Beez Logo" width="200px" />
                 <h1 class="title">About Us</h1>
                 <p class="text">
                     We are a team of students currently enrolled in COM-480 Data Visualization at EPFL, undertaking 
@@ -71,9 +92,9 @@
                 </p>
             </div>
 
-    <!-- FullPage.js JavaScript -->
+    <!-- Library JavaScript -->
     <script type="text/javascript" src="lib/fullpage.js"></script>
-
+    <script type="text/javascript" src="lib/d3.v7.js"></script>
     <!-- Custom JavaScript -->
     <script type="text/javascript" src='script.js'></script>
 </body>
