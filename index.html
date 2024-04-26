@@ -17,11 +17,14 @@
 </head>
 <body>
 
+    <!-- fullPage js main structure-->
     <div id="fullpage">
+
+        <!-- Section 1: Main -->
         <div class="section" id="main">
             <div class="section-content">
-                <h1 class="title">World Important Events</h1>
-                <p class="text">
+                <h1 class="title main">WORLD IMPORTANT EVENTS</h1>
+                <p class="text main">
                     Welcome to our website! Here you will find a collection of data visualizations 
                     related to significant global events. Our goal is to provide you with a comprehensive 
                     overview of these events, allowing you to explore and understand the data in a meaningful way.
@@ -29,46 +32,157 @@
             </div>
         </div>
 
+        <!-- Section 2: Explaination Map -->
+        <div class="section" id="exp_map">
+            <div class="section-content">
+                <h1 class="title">GLOBAL EVENT</h1>
+                <p class="text">
+                    We are going to begin our exploration of the dataset by creating an interactive visualization. This visualization 
+                    will feature a 3D globe of the Earth, designed to enhance your user experience by allowing for dynamic interaction 
+                    with the data. You will have the ability to select between different viewing modes: one where event markers are 
+                    displayed on the globe, color-coded according to their impact, and another that shows a heat map representing the 
+                    temporal and geographical distribution of events worldwide.
+                </p>
+                <p class="text">
+                    In the first mode, each marker's color will reflect the magnitude of the event's impact, providing a quick visual 
+                    assessment of severity. You can hover your mouse over any marker to receive a popup with more detailed information 
+                    about that particular event, including its nature, consequences, and any significant data points related to the event.
+                </p>
+                <p class="text">
+                    Alternatively, the heat map mode offers a time-lapse feature, allowing you to observe how the frequency and location 
+                    of events have evolved over time. This mode aims to provide a clearer understanding of trends and patterns, helping 
+                    identify hotspots of activity or shifts in the occurrence of events globally.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 3: Events Map -->
         <div class="section" id="events_map">
             <div class="section-content">
                 <div class="header">
                     <h1>GLOBAL EVENT</h1>
                     <!-- Round buttons -->
                     <div class="round-buttons">
-                        <button class="stadium-button">1</button>
-                        <button class="stadium-button">2</button>
-                        <button class="stadium-button">3</button>
+                        <button class="stadium-button clicked">Points</button>
+                        <button class="stadium-button">Heatmap</button>
                     </div>
                 </div>
                 <!-- Main content area with image and checkboxes -->
                 <div class="content">
                     <div class="image-box">
-                        <img src="img/map.png" alt="Sketch of the map" width="500px" id="map">
+                        <img src="img/points_map.jpg" alt="Sketch of the map" width="60%" id="map">
                     </div>
                 </div>
-                <!-- Slider at the bottom -->
-                <div class="slider">
-                    <input type="range" min="0" max="100" value="0" class="slider" id="sliderMap">
-                </div>
             </div>
         </div>
 
-        <div class="section" id="plot1">
+        <!-- Section 4: Explaination Type Events -->
+        <div class="section" id="exp_event">
+            <div class="section-content">
+                <h1 class="title">TYPE OF EVENT ANALYSIS</h1>
+                <p class="text">
+                    We are continuing our exploration with a set of straightforward yet insightful visualizations focusing on the types of 
+                    events. In the upcoming section, you will have the opportunity to explore three distinct types of visualizations.
+                </p>
+                <p class="text">
+                    The first visualization is a bubble plot, which displays the frequency of various types of events. You can interact 
+                    with this plot by selecting the continent of your interest, enabling you to tailor the visualization to show data 
+                    relevant to specific geographical regions. This feature allows for a customized view that can help identify regional 
+                    patterns or anomalies in event types.
+                </p>
+                <p class="text">
+                    The second visualization is a mosaic bubble plot, which offers a layered perspective on the data. The first layer 
+                    in this plot represents the outcomes of the events, serving as the primary categorization. Nested within these outcome 
+                    bubbles are sub-bubbles categorizing the event types. The innermost layer displays bubbles containing the most common 
+                    words and ideas found in the descriptions of these events. This structured approach helps in understanding the 
+                    correlation between outcomes, event types, and their descriptions, providing a nuanced insight into the data.
+                </p>
+                <p class="text">
+                    The final graph in this section is designed within a circular framework that categorizes individual events by 
+                    principal event types. As you hover over any point in this graph, the event's detailed description will appear. 
+                    It also highlights relevant event types and draws connections to these categories. This interactive element not only 
+                    enhances the comprehension of individual events but also engages users by showing how events interlink within broader 
+                    categories. This visualization aims to provide a comprehensive understanding of the data, encouraging deeper engagement 
+                    and analysis.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 5: Type of Events -->
+        <div class="section" id="type_of_events">
             <div class="slide" id="slide1">
-                <div id="plot1"></div>
-                <h1>Plot 1</h1>
+                <div id="type_event_continent"></div>
+                <h1>Bubble type distribution</h1>
+                <img src="img/type_event_continent.jpg" alt="Sketch of the continent bubble" width="80%" class="type_of_event">
             </div>
             <div class="slide" id="slide2">
-                <div id="plot1"></div>
-                <h1>Plot 2</h1>
+                <div id="bubble_zoom"></div>
+                <h1>Bubble Mosaic</h1>
+                <img src="img/bubble_zoom.jpg" alt="Sketch of the type zoomed bubble" width="70%" class="type_of_event">
+            </div>
+            <div class="slide" id="slide3">
+                <div id="events_link"></div>
+                <h1>Link</h1>
+                <img src="img/type_events_link.jpg" alt="Sketch of the linked type of event" width="50%" class="type_of_event">
             </div>
         </div>
 
+        <!-- Section 6: Explaination Distribution -->
+        <div class="section" id="exp_distribution">
+            <div class="section-content">
+                <h1 class="title">Distribution</h1>
+                <p class="text">
+                    The upcoming visualization is designed to provide you with a detailed understanding of the distribution of events 
+                    categorized by their outcomes—positive, negative, and neutral—over time. This interactive tool is particularly 
+                    effective in illustrating how different types of events have evolved and fluctuated through various periods.
+                </p>
+                <p class="text">
+                    You will have the flexibility to select any country of interest, enabling you to focus on specific geographical 
+                    data. This feature is particularly useful for comparative analysis or for gaining insights into regional trends and 
+                    their impacts over time.
+                </p>
+                <p class="text">
+                    Additionally, the visualization includes a slider component, which allows you to adjust the time span of the data 
+                    displayed. This slider can be moved to narrow down or expand the time frame, from months to years or even decades, 
+                    depending on the range of available data. By adjusting the slider, you can observe how the incidence and nature of these
+                    outcomes have changed over time, providing a dynamic way to explore historical trends and predict future patterns.
+                </p>
+            </div>
+        </div>
 
+        <!-- Section 7: Distribution -->
+        <div class="section" id="distribution">
+            <div class="section-content">
+                <h1 class="title">Distribution</h1>
+                <img src="img/country_time_dist.jpg" alt="Sketch of the time dist of event" width="80%" class="type_of_event">
+            </div>
+        </div>
+
+        <!-- Section 8: Explaination Race-->
+        <div class="section" id="exp_race">
+            <div class="section-content">
+                <h1 class="title">Race</h1>
+                <p class="text">
+                    Our final visualization offers a captivating and dynamic experience through a "race bar chart," where you can 
+                    visually track the evolution of the number of events over time through different countries. This interactive 
+                    feature animates the progression of events, highlighting how different countires has the history changed through their
+                    timeline.
+                </p>
+            </div>
+        </div>
+
+        <!--Race-->
+        <div class="section" id="race">
+            <div class="section-content">
+                <h1 class="title">Race</h1>
+                <img src="img/number_event_race.jpg" alt="Sketch of the Race" width="70%" class="type_of_event">
+            </div>
+        </div>
         
+        <!-- Section 9: About Us -->
         <div class="section" id="about">
             <div class="section-content">
-                <img id="dataBeezLogo" src="img/logo.png" alt="Data Beez Logo" width="200px" />
+                <img src="img/logo_v2.png" alt="Logo" id="logo">
                 <h1 class="title">About Us</h1>
                 <p class="text">
                     We are a team of students currently enrolled in COM-480 Data Visualization at EPFL, undertaking 
