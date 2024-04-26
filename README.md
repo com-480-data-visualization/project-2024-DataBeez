@@ -6,7 +6,9 @@
 | Jacquet-Francillon Elliot Philip| 316517 |
 | Hinard Killian | 312106 |
 
-[Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
+[Milestone 1](./milestone1/milestone1.md) • [Milestone 2](./milestone2/milestone2.pdf) • [Milestone 3](#milestone-3)
+
+The website is available [here](https://com-480-data-visualization.github.io/project-2024-DataBeez/).
 
 ## Milestone 1 (29th March, 5pm)
 
