@@ -80,40 +80,21 @@
         <div class="section" id="exp_event">
             <div class="section-content">
                 <h1 class="title">TYPE OF EVENT ANALYSIS</h1>
-                <p class="text">
-                    We are continuing our exploration with a set of straightforward yet insightful visualizations focusing on the types of 
-                    events. In the upcoming section, you will have the opportunity to explore three distinct types of visualizations.
-                </p>
-                <p class="text">
-                    The first visualization is a bubble plot, which displays the frequency of various types of events. You can interact 
-                    with this plot by selecting the continent of your interest, enabling you to tailor the visualization to show data 
-                    relevant to specific geographical regions. This feature allows for a customized view that can help identify regional 
-                    patterns or anomalies in event types.
-                </p>
-                <p class="text">
-                    The second visualization is a mosaic bubble plot, which offers a layered perspective on the data. The first layer 
-                    in this plot represents the outcomes of the events, serving as the primary categorization. Nested within these outcome 
-                    bubbles are sub-bubbles categorizing the event types. The innermost layer displays bubbles containing the most common 
-                    words and ideas found in the descriptions of these events. This structured approach helps in understanding the 
-                    correlation between outcomes, event types, and their descriptions, providing a nuanced insight into the data.
-                </p>
-                <p class="text">
-                    The final graph in this section is designed within a circular framework that categorizes individual events by 
-                    principal event types. As you hover over any point in this graph, the event's detailed description will appear. 
-                    It also highlights relevant event types and draws connections to these categories. This interactive element not only 
-                    enhances the comprehension of individual events but also engages users by showing how events interlink within broader 
-                    categories. This visualization aims to provide a comprehensive understanding of the data, encouraging deeper engagement 
-                    and analysis.
-                </p>
             </div>
         </div>
 
         <!-- Section 5: Type of Events -->
         <div class="section" id="type_of_events">
             <div class="slide" id="slide1">
-                <div id="type_event_continent"></div>
                 <h1>Bubble type distribution</h1>
-                <img src="img/type_event_continent.jpg" alt="Sketch of the continent bubble" width="80%" class="type_of_event">
+                <div class="round-buttons">
+                    <button class="stadium-button clicked">Africa</button>
+                    <button class="stadium-button">Asia</button>
+                    <button class="stadium-button">Europe</button>
+                    <button class="stadium-button">North America</button>
+                    <button class="stadium-button">South America</button>
+                </div>
+                <div id="type_event_continent"></div>
             </div>
             <div class="slide" id="slide2">
                 <div id="bubble_zoom"></div>
@@ -130,7 +111,7 @@
         <!-- Section 6: Explaination Distribution -->
         <div class="section" id="exp_distribution">
             <div class="section-content">
-                <h1 class="title">Distribution</h1>
+                <h1 class="title">Impact Analysis</h1>
                 <p class="text">
                     The upcoming visualization is designed to provide you with a detailed understanding of the distribution of events 
                     categorized by their outcomes—positive, negative, and neutral—over time. This interactive tool is particularly 
