@@ -80,9 +80,9 @@ function drawBubbleChart(dataArray) {
                 .text(d.value);
         });
 
-    simulation.on('tick', () => {
-        node.attr('transform', d => `translate(${d.x}, ${d.y})`);
-    });
+    // simulation.on('tick', () => {
+    //     node.attr('transform', d => `translate(${d.x}, ${d.y})`);
+    // });
 }
 
 // Function to wrap text within bubbles
@@ -114,116 +114,6 @@ function getTextWidth(text, font) {
     context.font = font;
     const metrics = context.measureText(text);
     return metrics.width;
-}
-
-// Impact Chart functions
-function loadImpactData(callback) {
-    d3.csv('data/modified_data.csv').then(function(data) {
-        data.forEach(d => {
-            d.Year = +d.Year.replace(/[^0-9]/g, ''); // Convert Year to a number, removing any non-digit characters
-        });
-        callback(data);
-    });
-}
-
-// Function to prepare the impact data
-function prepareImpactData(data, continent) {
-    const nestedData = d3.group(data.filter(d => d.Continent === continent), d => d.Year, d => d.Outcome);
-    
-    const outcomes = ['Positive', 'Neutral', 'Negative'];
-    const years = d3.range(d3.min(data, d => d.Year), d3.max(data, d => d.Year) + 1);
-    
-    const preparedData = years.map(year => {
-        const yearData = nestedData.get(year) || new Map();
-        const result = { year: year };
-        outcomes.forEach(outcome => {
-            const outcomeData = yearData.get(outcome);
-            result[outcome.toLowerCase()] = outcomeData ? outcomeData.length : 0;
-        });
-        return result;
-    });
-    
-    return preparedData;
-}
-
-// Function to draw the impact chart
-function drawImpactChart(data) {
-    const margin = { top: 20, right: 20, bottom: 30, left: 50 };
-    const width = 800 - margin.left - margin.right;
-    const height = 400 - margin.top - margin.bottom;
-    
-    const svg = d3.select("#impact_analysis").append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-    
-    const x = d3.scaleLinear()
-        .domain(d3.extent(data, d => d.year))
-        .range([0, width]);
-    
-    const y = d3.scaleLinear()
-        .domain([0, d3.max(data, d => d.positive + d.neutral + d.negative)])
-        .range([height, 0]);
-    
-    const color = d3.scaleOrdinal()
-        .domain(['positive', 'neutral', 'negative'])
-        .range(['#2ca02c', '#ff7f0e', '#d62728']);
-    
-    const stack = d3.stack()
-        .keys(['positive', 'neutral', 'negative']);
-    
-    const area = d3.area()
-        .x(d => x(d.data.year))
-        .y0(d => y(d[0]))
-        .y1(d => y(d[1]));
-    
-    svg.selectAll(".layer")
-        .data(stack(data))
-        .enter().append("path")
-        .attr("class", "layer")
-        .attr("d", area)
-        .style("fill", d => color(d.key));
-    
-    svg.append("g")
-        .attr("class", "axis axis--x")
-        .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x).tickFormat(d3.format("d")));
-    
-    svg.append("g")
-        .attr("class", "axis axis--y")
-        .call(d3.axisLeft(y));
-}
-
-// Function to update the impact chart based on slider values
-function updateImpactChart(continent) {
-    loadImpactData(function(data) {
-        const preparedData = prepareImpactData(data, continent);
-        drawImpactChart(preparedData);
-
-        // Add slider for impact analysis
-        const slider = d3.sliderBottom()
-            .min(d3.min(data, d => d.Year))
-            .max(d3.max(data, d => d.Year))
-            .step(1)
-            .width(800)
-            .ticks(10)
-            .default([d3.min(data, d => d.Year), d3.max(data, d => d.Year)])
-            .on('onchange', val => {
-                const filteredData = preparedData.filter(d => d.year >= val[0] && d.year <= val[1]);
-                d3.select("#impact_analysis svg").remove();
-                drawImpactChart(filteredData);
-            });
-
-        const g = d3.select('div#slider')
-            .append('svg')
-            .attr('width', 900)
-            .attr('height', 100)
-            .append('g')
-            .attr('transform', 'translate(30,30)');
-
-        g.call(slider);
-    });
 }
 
 // Configuring FullPage.js
