@@ -80,9 +80,9 @@ function drawBubbleChart(dataArray) {
                 .text(d.value);
         });
 
-    // simulation.on('tick', () => {
-    //     node.attr('transform', d => `translate(${d.x}, ${d.y})`);
-    // });
+    simulation.on('tick', () => {
+        node.attr('transform', d => `translate(${d.x}, ${d.y})`);
+    });
 }
 
 // Function to wrap text within bubbles
