@@ -89,7 +89,7 @@ function showEventDetails(point) {
 }
 
 //Code to enable zooming into the globe when the mouse is over the globe container
-const globeElement = document.getElementById('globeViz');
+const globeElement = document.getElementById('globe');
 
 // Disable fullPage.js auto-scrolling when the mouse enters the globe container
 globeElement.addEventListener('mouseenter', function() {
