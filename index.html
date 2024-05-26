@@ -76,11 +76,11 @@
                     <div class="sidebar">
                         <div id="checkboxes">
                             <h2><u>Filter Options</u></h2> <!-- Title for the checkbox section -->
-                            <input type="checkbox" id="positive" checked>
+                            <input type="checkbox" value="positive" checked>
                             <label for="positive">Positive</label>
-                            <input type="checkbox" id="negative" checked>
+                            <input type="checkbox" value="negative" checked>
                             <label for="negative">Negative</label>
-                            <input type="checkbox" id="mixed" checked>
+                            <input type="checkbox" value="mixed" checked>
                             <label for="mixed">Mixed</label>
                         </div>
                         <div id="infoPanel">
@@ -209,10 +209,12 @@
             </div>
 
     <!-- Library JavaScript -->
-    <script type="text/javascript" src="assets/lib/fullpage.js"></script>
-    <script type="text/javascript" src="assets/lib/d3.v7.js"></script>
+    <script src="assets/lib/fullpage.js"></script>
+    <script src="assets/lib/d3.v7.js"></script>
     <script src="//unpkg.com/globe.gl"></script>
     <!-- Custom JavaScript -->
-    <script type="text/javascript" src='assets/scripts/script.js'></script>
+    <script type="module" src='assets/scripts/main.js'></script>
+    <script src='assets/scripts/globe.js'></script>
+    <script src='assets/scripts/bubble.js'></script>
 </body>
 </html>
