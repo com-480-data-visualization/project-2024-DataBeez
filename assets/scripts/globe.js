@@ -1,6 +1,6 @@
 
 // Initialize the globe with default settings
-const myGlobe = Globe()(document.getElementById('globeViz'))
+const myGlobe = Globe()(document.getElementById('globe'))
   .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
   .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
   .width(850)

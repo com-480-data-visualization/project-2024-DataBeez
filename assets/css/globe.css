@@ -1,0 +1,66 @@
+/* Styles for the header in the globe section */
+.header {
+    text-align: center;
+    top: 0;
+}
+
+/* Styles for the content of the globe section */
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ensures that children stretch to fill the parent's height */
+    width: 90%;
+    height: auto;
+}
+
+/* Styles for the globe container */
+.globe-box {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    margin-right: 20px; /* Space between the globe and the sidebar */
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+/* Styles for the sidebar container */
+.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    width: 500px; /* Fixed width for the sidebar so it doesn't vary for specific event description*/
+}
+
+#checkboxes, #infoPanel {
+    margin-bottom: 20px; /* Spacing between sections of the sidebar*/
+}
+
+#controls {
+    margin-bottom: 5px; /* Slightly less spacing between the controls and the bottom of the sidepanel*/
+}
+
+#checkboxes h2, #infoPanel h2, #controls h2 {
+    margin-bottom: 10px; /* Spacing below each title */
+    text-align: center;
+}
+
+#infoPanel {
+    flex-grow: 1; /* Allow the panel to grow to fill the remaining space */
+    text-align: left; /* Align text to the left */
+}
+
+#infoPanel, #controls, #checkboxes {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+}
+
+#controls input[type="range"], #controls p {
+    text-align: center;
+    width: 100%; /* Full width for easier interaction */
+}

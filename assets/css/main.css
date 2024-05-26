@@ -1,0 +1,72 @@
+/* Reset CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #e4e4e4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles for the Sections in FullPageJS*/
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url("../img/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+/*Sytle for the titles and text*/
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.title.main {
+    font-size: 4rem;
+    margin-bottom: 40px;
+}
+
+.text {
+    font-size: 1.4rem;
+    color: #ffffff;
+    padding: 0 100px;
+    margin-bottom: 20px;
+}
+
+.text.main {
+    font-size: 2rem;
+    padding: 0 200px;
+    margin-bottom: 40px;
+}
+
+/* Styles for the logo */
+#logo {
+    width: 200px;
+    height: auto;
+    animation: floatAnimation 2s ease-in-out infinite alternate;
+}
+
+/* Animation for the logo */
+@keyframes floatAnimation {
+    0% {
+      transform: translateX(-3px) translateY(-3px); /* Initial position */
+    }
+    100% {
+      transform: translateX(3px) translateY(3px); /* Final position */
+    }
+}
