@@ -121,7 +121,6 @@ new fullpage('#fullpage', {
     autoScrolling: true,
     navigation: true,
     licenseKey: 'gplv3-license',
-    sectionsColor: ['#f2f2f2', '#ffcbc4', '#ffcbc4', '#c4d9ff', '#c4d9ff', '#c5ffc4', '#c5ffc4', '#ddc4ff', '#ddc4ff', '#f2f2f2'],
     afterRender: function() {
         loadData(); // Load data and draw the chart
     }
@@ -141,9 +140,9 @@ buttons.on("click", function() {
     // Get the value of the clicked button
     let value = d3.select(this).text();
 
-    // Update the charts based on the selected continent
-    updateChart(value);
-    updateImpactChart(value);
+    // // Update the charts based on the selected continent
+    // updateChart(value);
+    // updateImpactChart(value);
 
     // Select the image element
     const img = d3.select('#map');
@@ -155,3 +154,94 @@ buttons.on("click", function() {
         img.attr("src", "img/heatmap_map.jpg");
     }
 });
+
+const myGlobe = Globe()(document.getElementById('globeViz'))
+  .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
+  .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+  .width(850)
+  .height(600)
+  .pointAltitude(0.01)
+  .pointRadius(0.5)
+  .onPointClick(showEventDetails);  // Add click handler for showing details
+
+let allDataGlobe = [];
+
+fetch('data/World Important Dates with Coordinates.csv')
+  .then(response => response.text())
+  .then(csv => d3.csvParse(csv))
+  .then(data => {
+    allDataGlobe = data;
+    updateGlobeData(21);  // Initialize with data from the 21th century
+  });
+
+document.getElementById('yearSlider').addEventListener('input', function() {
+    const century = parseInt(this.value);
+    document.getElementById('centuryDisplay').textContent = `${century}th`;
+    updateGlobeData(century);
+});
+
+function updateGlobeData(century) {
+    const startYear = (century - 1) * 100 + 1;
+    const endYear = century * 100;
+    const filteredData = allDataGlobe.filter(d => {
+        const year = parseInt(d.Year);
+        return year >= startYear && year <= endYear;
+    });
+    myGlobe.pointsData(filteredData.map(({ latitude, longitude, NameOfIncident, Year, PlaceName, TypeOfEvent, Impact, AffectedPopulation, Outcome }) => ({
+        lat: parseFloat(latitude),
+        lng: parseFloat(longitude),
+        label: NameOfIncident,
+        year: Year,
+        placeName: PlaceName,
+        typeOfEvent: TypeOfEvent,
+        impact: Impact,
+        affectedPopulation: AffectedPopulation,
+        outcome: Outcome // Ensure this is correctly parsed and matches your expected values
+      })))
+      .pointColor(d => {
+        switch(d.outcome.toLowerCase()) { // Use toLowerCase() to avoid case sensitivity issues
+          case 'positive':
+            return 'green';
+          case 'negative':
+            return 'red';
+          case 'mixed':
+            return 'gold';
+          case 'ongoing':
+            return 'blue';
+          default:
+            return 'gray'; // Default color if none of the categories match
+        }
+      });
+      document.getElementById('infoPanel').innerHTML = '<h2><u>Event Details</u></h2>';
+}
+
+function showEventDetails(point) {
+    const infoPanel = document.getElementById('infoPanel');
+    infoPanel.innerHTML = `
+        <h2><u>Event Details</u></h2>
+        <strong><u>Event:</u></strong> ${point.label}<br/>
+        <strong><u>Year:</u></strong> ${point.year}<br/>
+        <strong><u>Location:</u></strong> ${point.placeName}<br/>
+        <strong><u>Type of Event:</u></strong> ${point.typeOfEvent}<br/>
+        <strong><u>Impact:</u></strong> ${point.impact}<br/>
+        <strong><u>Affected Population:</u></strong> ${point.affectedPopulation}<br/>
+        <strong><u>Outcome:</u></strong> ${point.outcome}
+    `;
+    myGlobe.pointAltitude(d => d === point ? 0.1 : 0.01);
+
+}
+
+const globeElement = document.getElementById('globeViz');
+
+// Disable fullPage.js auto-scrolling when the mouse enters the globe container
+globeElement.addEventListener('mouseenter', function() {
+    fullpage_api.setAllowScrolling(false);
+    fullpage_api.setKeyboardScrolling(false);
+});
+
+// Re-enable fullPage.js auto-scrolling when the mouse leaves the globe container
+globeElement.addEventListener('mouseleave', function() {
+    fullpage_api.setAllowScrolling(true);
+    fullpage_api.setKeyboardScrolling(true);
+});
+
