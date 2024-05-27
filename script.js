@@ -21,7 +21,6 @@ function loadData() {
     d3.csv('data/modified_data.csv').then(function(data) {
         allData = data;
         updateChart('Africa'); // Default to Africa on load
-        updateImpactChart('Africa'); // Default to Africa on load
     });
 }
 
@@ -44,7 +43,7 @@ function drawBubbleChart(dataArray) {
 
     const scale = d3.scaleSqrt()
         .domain([0, d3.max(dataArray, d => d.value)])
-        .range([30, 100]);  // Adjust range based on your visual design needs
+        .range([20, 100]);  // Adjust range based on your visual design needs
 
     const simulation = d3.forceSimulation(dataArray)
         .force('charge', d3.forceManyBody().strength(15))
@@ -80,9 +79,9 @@ function drawBubbleChart(dataArray) {
                 .text(d.value);
         });
 
-    // simulation.on('tick', () => {
-    //     node.attr('transform', d => `translate(${d.x}, ${d.y})`);
-    // });
+    simulation.on('tick', () => {
+        node.attr('transform', d => `translate(${d.x}, ${d.y})`);
+    });
 }
 
 // Function to wrap text within bubbles
@@ -121,7 +120,7 @@ new fullpage('#fullpage', {
     autoScrolling: true,
     navigation: true,
     licenseKey: 'gplv3-license',
-    sectionsColor: ['#f2f2f2', '#ffcbc4', '#ffcbc4', '#c4d9ff', '#c4d9ff', '#c5ffc4', '#c5ffc4', '#ddc4ff', '#ddc4ff', '#f2f2f2'],
+    sectionsColor: ['#f2f2f2', '#ffcbc4', '#ffcbc4', '#c4d9ff', '#c4d9ff', '#f4efda', '#f4efda', '#ddc4ff', '#ddc4ff', '#f2f2f2'],
     afterRender: function() {
         loadData(); // Load data and draw the chart
     }
@@ -141,9 +140,8 @@ buttons.on("click", function() {
     // Get the value of the clicked button
     let value = d3.select(this).text();
 
-    // Update the charts based on the selected continent
+    // Update the chart based on the selected continent
     updateChart(value);
-    updateImpactChart(value);
 
     // Select the image element
     const img = d3.select('#map');
@@ -155,3 +153,5 @@ buttons.on("click", function() {
         img.attr("src", "img/heatmap_map.jpg");
     }
 });
+
+
