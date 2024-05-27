@@ -1,0 +1,45 @@
+/* Styles for round buttons */
+.round-button {
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    border: none;
+    border-radius: 50%; /* Makes it round */
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.round-button:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: scale(1.1);
+}
+
+/* Styles for stadium buttons */
+.stadium-button {
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    border: none;
+    border-radius: 20px; /* Creates the rounded ends */
+    padding: 10px 20px; /* control the size of the button */
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #000;
+    text-align: center;
+    display: inline-block; /* Allows the buttons to be aligned inline */
+    margin: 10px; /* Spacing between buttons */
+}
+
+.stadium-button:hover {
+    background-color: rgba(255, 255, 255, 0.7); /* Lightens the button on hover */
+    transform: translateY(-2px); /* Slight raise effect on hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stadium-button:active {
+    background-color: rgba(122, 122, 122, 0.5); /* Darker color when button is pressed */
+}
+
+.stadium-button.clicked {
+    background-color: rgba(122, 122, 122, 0.5); /* Darker color when button is clicked */
+    transform: translateY(1px);
+}

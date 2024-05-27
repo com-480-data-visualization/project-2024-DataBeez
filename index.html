@@ -9,10 +9,12 @@
     <title>DataBeez - World Important Events</title>
 
     <!-- FullPage.js CSS -->
-    <link rel="stylesheet" type="text/css" href="lib/fullpage.css" /> 
+    <link rel="stylesheet" type="text/css" href="assets/lib/fullpage.css" /> 
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/globe.css">
+    <link rel="stylesheet" href="assets/css/button.css">
 
 </head>
 <body>
@@ -57,7 +59,7 @@
         </div>
 
         <!-- Section 3: Events Map -->
-        <div class="section" id="events_map">
+        <div class="section" id="globe_section">
             <div class="section-content">
                 <div class="header">
                     <h1>GLOBAL EVENT</h1>
@@ -69,8 +71,28 @@
                 </div>
                 <!-- Main content area with image and checkboxes -->
                 <div class="content">
-                    <div class="image-box">
-                        <img src="img/points_map.jpg" alt="Sketch of the map" width="60%" id="map">
+                    <div class="globe-box">
+                        <!-- <img src="img/points_map.jpg" alt="Sketch of the map" width="60%" id="map"> -->
+                        <div id="globe"></div>
+                    </div>
+                    <div class="sidebar">
+                        <div id="checkboxes">
+                            <h2><u>Filter Options</u></h2> <!-- Title for the checkbox section -->
+                            <input type="checkbox" value="positive" checked>
+                            <label for="positive">Positive</label>
+                            <input type="checkbox" value="negative" checked>
+                            <label for="negative">Negative</label>
+                            <input type="checkbox" value="mixed" checked>
+                            <label for="mixed">Mixed</label>
+                        </div>
+                        <div id="infoPanel">
+                            <h2><u>Event Details</u></h2> <!-- Title for the information panel -->
+                        </div>
+                        <div id="controls">
+                            <h2><u>Timeline Control</u></h2> <!-- Title for the controls section -->
+                            <input type="range" id="yearSlider" min="1" max="21" value="21" step="1">
+                            <p>Century: <span id="centuryDisplay">21th</span></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -106,7 +128,7 @@
             <div class="slide" id="slide3">
                 <div id="events_link"></div>
                 <h1>Link</h1>
-                <img src="img/type_events_link.jpg" alt="Sketch of the linked type of event" width="50%" class="type_of_event">
+                <img src="assets/img/type_events_link.jpg" alt="Sketch of the linked type of event" width="50%" class="type_of_event">
             </div>
         </div>
 
@@ -138,7 +160,7 @@
             <div class="section-content">
                 <h1 class="title">Distribution</h1>
                 <div id="impact_analysis"></div>
-                <img src="img/country_time_dist.jpg" alt="Sketch of the time dist of event" width="80%" class="type_of_event">
+                <img src="assets/img/country_time_dist.jpg" alt="Sketch of the time dist of event" width="80%" class="type_of_event">
             </div>
         </div>
 
@@ -159,14 +181,14 @@
         <div class="section" id="race">
             <div class="section-content">
                 <h1 class="title">Race</h1>
-                <img src="img/number_event_race.jpg" alt="Sketch of the Race" width="70%" class="type_of_event">
+                <img src="assets/img/number_event_race.jpg" alt="Sketch of the Race" width="70%" class="type_of_event">
             </div>
         </div>
         
         <!-- Section 9: About Us -->
         <div class="section" id="about">
             <div class="section-content">
-                <img src="img/logo_v2.png" alt="Logo" id="logo">
+                <img src="assets/img/logo_v2.png" alt="Logo" id="logo">
                 <h1 class="title">About Us</h1>
                 <p class="text">
                     We are a team of students currently enrolled in COM-480 Data Visualization at EPFL, undertaking 
@@ -191,10 +213,10 @@
             </div>
 
     <!-- Library JavaScript -->
-    <script type="text/javascript" src="lib/fullpage.js"></script>
-    <script type="text/javascript" src="lib/d3.v7.js"></script>
+    <script src="assets/lib/fullpage.js"></script>
+    <script src="assets/lib/d3.v7.js"></script>
+    <script src="//unpkg.com/globe.gl"></script>
     <!-- Custom JavaScript -->
     <script type="text/javascript" src='script.js'></script>
-    <script type="text/javascript" src='mosaic.js'></script>
 </body>
 </html>
