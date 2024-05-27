@@ -114,3 +114,11 @@ document.getElementById('yearSlider').addEventListener('input', function() {
 document.querySelectorAll('#checkboxes input[type="checkbox"]').forEach(checkbox => {
     checkbox.addEventListener('change', () => updateGlobeData(parseInt(document.getElementById('yearSlider').value)));
 });
+
+const globe_buttons = d3.selectAll("#globe_section .stadium-button");
+
+globe_buttons.on("click", function() {
+    globe_buttons.classed("clicked", false);
+    d3.select(this).classed("clicked", true);
+    let value = d3.select(this).text();
+});
