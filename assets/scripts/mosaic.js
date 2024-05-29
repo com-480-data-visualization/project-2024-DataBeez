@@ -1,7 +1,7 @@
 const PACKING_ELEMENT_ID = "bubble_zoom";
 const PACKING_TEXT_ELEMENT_ID = "circle-packing-text";
 
-const LIGHT_BLUE_COLOR = '#cceeff'; // Light blue color to match the background
+const LIGHT_BLUE_COLOR = '#cceeff';  // Light blue color to match the background
 const GREEN_COLOR = '#2e5d52';
 const BLACK_COLOR = '#000000';
 
@@ -15,11 +15,11 @@ const PACKING_TEXT = {
     // Add relevant text descriptions here
 };
 
-const width = 800; // Adjust the width for better centering
-const height = 600; // Adjust the height for better centering
+const width = 700;
+const height = 800;
 
 d3.csv('data/modified_data.csv').then(function(data) {
-    const filteredData = data.filter(d => d.Outcome !== "Ongoing" && d['Broad Category'] !== "unknown");
+    const filteredData = data.filter(d => d.Sentiment !== "Ongoing");
     const root = d3.hierarchy({ children: groupData(filteredData) })
         .sum(d => d.value)
         .sort((a, b) => b.value - a.value);
@@ -61,15 +61,13 @@ function initPacking(root) {
         .append("svg")
         .attr("width", width)
         .attr("height", height)
-        .attr("viewBox", `0 0 ${width} ${height}`) // Adjust the viewBox for better centering
-        .attr("preserveAspectRatio", "xMidYMid meet") // Ensure the SVG is centered
+        .attr("viewBox", `${-width / 2} ${-height / 2} ${width} ${height}`)
         .style("display", "block")
-        .style("background", colorScale(0))
+        .style("background", "none")
         .style("cursor", "pointer")
         .on("click", (event) => zoom(event, root));
 
     const node = svg.append("g")
-        .attr("transform", `translate(${width / 2},${height / 2})`) // Center the group within the SVG
         .selectAll("circle")
         .data(nodes.slice(1))
         .join("circle")
@@ -80,22 +78,21 @@ function initPacking(root) {
         .on("click", (event, d) => focus !== d && (zoom(event, d), event.stopPropagation()));
 
     const label = svg.append("g")
-        .attr("transform", `translate(${width / 2},${height / 2})`) // Center the group within the SVG
-        .style("font-family", "'Comic Sans MS', 'Comic Sans', 'Chalkboard', 'Marker Felt', sans-serif") // Bubbly and fat font
+        .style("font-family", "var(--default-font-family)")
         .attr("pointer-events", "none")
         .attr("text-anchor", "middle")
         .selectAll("text")
         .data(nodes)
         .join("text")
         .attr("dy", "0.3em")
-        .style("font-size", d => `${Math.min(2 * d.r / 3, (2 * d.r - 8) / getTextWidth(d.data.name, `${d.r}px 'Comic Sans MS', 'Comic Sans', 'Chalkboard', 'Marker Felt', sans-serif`))}px`) // Adjust font size to fit within bubbles
+        .style("font-size", d => `${fontSizeScale(d.r)}px`)
         .style("fill-opacity", d => d.parent === root ? 1 : 0)
         .style("display", d => d.parent === root ? "inline" : "none")
         .text(d => d.data.name);
 
     let view;
     const zoomTo = (v) => {
-        const k = Math.min(width, height) / v[2];
+        const k = width / v[2];
 
         view = v;
 
@@ -130,15 +127,6 @@ function initPacking(root) {
             .on("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
             .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
     }
-}
-
-// Utility function to measure text width
-function getTextWidth(text, font) {
-    const canvas = document.createElement('canvas');
-    const context = canvas.getContext('2d');
-    context.font = font;
-    const metrics = context.measureText(text);
-    return metrics.width;
 }
 
 
