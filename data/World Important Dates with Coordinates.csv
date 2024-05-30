@@ -471,25 +471,25 @@ Sl. No,NameOfIncident,Date,Month,Year,Country,TypeOfEvent,PlaceName,Impact,Affec
 831,Start of the French Revolution,14,July,1789,France,Revolution,Paris,Beginning of the end of monarchy and rise of the Republic,French population,Revolutionaries,Positive,48.8534951,2.3483915
 832,Execution of Louis XVI,21,January,1793,France,Execution,Paris,Symbolic end of absolute monarchy and start of the Republic,French population,Revolutionary government,Negative,48.8534951,2.3483915
 833,Napoleon Bonaparte's Coup d'Etat,9,November,1799,France,Political Coup,Paris,Establishment of the Consulate  ending the French Revolution,French population,Napoleon Bonaparte,Positive,48.8534951,2.3483915
-834,Napoleonic Code Enacted,21,March,1804,France,Legislation,Paris,Foundation of modern legal systems in many countries,French population,Napoleon Bonaparte,Positive,,
-836,Establishment of the Fifth Republic,4,October,1958,France,Political Change,Paris,New constitution and government structure strengthening presidential power,French population,Charles de Gaulle,Positive,,
-837,May 1968 Protests,Unknown,May,1968,France,Social Movement,Paris,Major social upheaval challenging traditional institutions,French students and workers,Student and worker unions,Mixed,,
-838,SameUnknownSex Marriage Legalized,18,May,2013,France,Legislation,Paris,Legalization of sameUnknownsex marriage in France,French LGBTQ+ community,French Government,Positive,,
-839,NotreUnknownDame de Paris Fire,15,April,2019,France,Disaster,Paris,Destruction and damage to a historic landmark,Global and French population,Unknown,Negative,,
-841,France Wins the 2018 FIFA World Cup,15,July,2018,France,Sport,Moscow,Second World Cup win boosting national pride,French population,French national football team,Positive,,
-843,Battle of Agincourt,25,October,1415,France,Military,Agincourt,Significant English victory in the Hundred Years' War,English and French armies,Henry V,Positive,,
-844,French Revolution Begins,14,July,1789,France,Revolution,Paris,Overthrow of the monarchy and rise of democratic ideals,French population,Revolutionaries,Positive,,
-845,Louis XVI Executed,21,January,1793,France,Execution,Paris,End of the monarchy and start of the French Republic,French population,Revolutionary government,Negative,,
-846,Reign of Terror Begins,5,September,1793,France,Political,Paris,Period of extreme violence and political purges,French population,Committee of Public Safety,Negative,,
-847,Napoleon Crowned Emperor,2,December,1804,France,Coronation,Paris,Establishment of the First French Empire,French population,Napoleon Bonaparte,Positive,,
-848,End of Napoleonic Wars,18,June,1815,France,War,Waterloo,Defeat of Napoleon and restoration of European monarchies,European population,Allied forces,Negative,,
-849,Second French Empire Declared,2,December,1852,France,Political,Paris,Establishment of the empire under Napoleon III,French population,Napoleon III,Positive,,
-850,Paris Commune,18,March,1871,France,Revolt,Paris,Revolutionary government in Paris following FrancoUnknownPrussian War,Parisians,Communards,Negative,,
-851,Dreyfus Affair,Unknown,Unknown,1894,France,Political Scandal,Paris,Wrongful conviction for treason exposing antiUnknownSemitism and political division,French population,Alfred Dreyfus,Mixed,,
-852,Women Gain the Right to Vote,21,April,1944,France,Legislation,Paris,Women's suffrage achieved,French women,Charles de Gaulle's provisional government,Positive,,
-853,Signing of the Treaty of Rome,25,March,1957,France,Political,Rome,Foundation of the European Economic Community,European populations,EEC founding members,Positive,,
-854,May 1968 Student Protests,Unknown,May,1968,France,Social Movement,Paris,Major social and political upheaval,French students and workers,Student and labor unions,Mixed,,
-855,Introduction of the Euro,1,January,1999,France,Economic,Paris,Adoption of the Euro as currency,European Union members,French Government,Positive,,
+834,Napoleonic Code Enacted,21,March,1804,France,Legislation,Paris,Foundation of modern legal systems in many countries,French population,Napoleon Bonaparte,Positive,48.8534951,2.3483915
+836,Establishment of the Fifth Republic,4,October,1958,France,Political Change,Paris,New constitution and government structure strengthening presidential power,French population,Charles de Gaulle,Positive,48.8534951,2.3483915
+837,May 1968 Protests,Unknown,May,1968,France,Social Movement,Paris,Major social upheaval challenging traditional institutions,French students and workers,Student and worker unions,Mixed,48.8534951,2.3483915
+838,SameUnknownSex Marriage Legalized,18,May,2013,France,Legislation,Paris,Legalization of sameUnknownsex marriage in France,French LGBTQ+ community,French Government,Positive,48.8534951,2.3483915
+839,NotreUnknownDame de Paris Fire,15,April,2019,France,Disaster,Paris,Destruction and damage to a historic landmark,Global and French population,Unknown,Negative,48.8534951,2.3483915
+841,France Wins the 2018 FIFA World Cup,15,July,2018,France,Sport,Moscow,Second World Cup win boosting national pride,French population,French national football team,Positive,48.6796927,5.8434058
+843,Battle of Agincourt,25,October,1415,France,Military,Agincourt,Significant English victory in the Hundred Years' War,English and French armies,Henry V,Positive,48.7323472,6.236384
+844,French Revolution Begins,14,July,1789,France,Revolution,Paris,Overthrow of the monarchy and rise of democratic ideals,French population,Revolutionaries,Positive,48.8534951,2.3483915
+845,Louis XVI Executed,21,January,1793,France,Execution,Paris,End of the monarchy and start of the French Republic,French population,Revolutionary government,Negative,48.8534951,2.3483915
+846,Reign of Terror Begins,5,September,1793,France,Political,Paris,Period of extreme violence and political purges,French population,Committee of Public Safety,Negative,48.8534951,2.3483915
+847,Napoleon Crowned Emperor,2,December,1804,France,Coronation,Paris,Establishment of the First French Empire,French population,Napoleon Bonaparte,Positive,48.8534951,2.3483915
+848,End of Napoleonic Wars,18,June,1815,France,War,Waterloo,Defeat of Napoleon and restoration of European monarchies,European population,Allied forces,Negative,43.4967842,0.7102914
+849,Second French Empire Declared,2,December,1852,France,Political,Paris,Establishment of the empire under Napoleon III,French population,Napoleon III,Positive,48.8534951,2.3483915
+850,Paris Commune,18,March,1871,France,Revolt,Paris,Revolutionary government in Paris following FrancoUnknownPrussian War,Parisians,Communards,Negative,48.8534951,2.3483915
+851,Dreyfus Affair,Unknown,Unknown,1894,France,Political Scandal,Paris,Wrongful conviction for treason exposing antiUnknownSemitism and political division,French population,Alfred Dreyfus,Mixed,48.8534951,2.3483915
+852,Women Gain the Right to Vote,21,April,1944,France,Legislation,Paris,Women's suffrage achieved,French women,Charles de Gaulle's provisional government,Positive,48.8534951,2.3483915
+853,Signing of the Treaty of Rome,25,March,1957,France,Political,Rome,Foundation of the European Economic Community,European populations,EEC founding members,Positive,48.8823012,2.3213298
+854,May 1968 Student Protests,Unknown,May,1968,France,Social Movement,Paris,Major social and political upheaval,French students and workers,Student and labor unions,Mixed,48.8534951,2.3483915
+855,Introduction of the Euro,1,January,1999,France,Economic,Paris,Adoption of the Euro as currency,European Union members,French Government,Positive,48.8534951,2.3483915
 858,Rise of the Roman Republic,509,Unknown,509,Italy,Political Change,Rome,End of Roman Kingdom and establishment of the republic,Roman population,Republican leaders,Positive,41.8933203,12.4829321
 862,Fall of the Western Roman Empire,4,September,476,Italy,Empire Fall,Rome,End of the Western Roman Empire and beginning of the Middle Ages,Roman population,Odoacer,Negative,41.8933203,12.4829321
 863,Crowning of Charlemagne,25,December,800,Italy,Coronation,Rome,Establishment of the Holy Roman Empire,European Christians,Charlemagne,Positive,41.8933203,12.4829321
