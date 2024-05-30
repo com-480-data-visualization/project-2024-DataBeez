@@ -1,0 +1,26 @@
+.slider {
+    width: 90%;
+    height: 25px;
+    background: #000080;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    width: 30px;
+    height: 25px;
+    background: #FF0000;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.slider::-moz-range-thumb {
+    width: 30px;
+    height: 25px;
+    background: #FF0000;
+    cursor: pointer;
+}
+
+

@@ -15,8 +15,8 @@ const PACKING_TEXT = {
     // Add relevant text descriptions here
 };
 
-const width = 700;
-const height = 800;
+const packingWidth = 700;  // Renamed from width to packingWidth
+const packingHeight = 800; // Renamed from height to packingHeight
 
 d3.csv('data/modified_data.csv').then(function(data) {
     const filteredData = data.filter(d => d.Sentiment !== "Ongoing");
@@ -43,7 +43,7 @@ function groupData(data) {
 
 function initPacking(root) {
     const pack = d3.pack()
-        .size([width, height])
+        .size([packingWidth, packingHeight])  // Use packingWidth and packingHeight
         .padding(CIRCLE_PADDING);
 
     const nodes = pack(root).descendants();
@@ -59,9 +59,9 @@ function initPacking(root) {
 
     const svg = d3.select(`#${PACKING_ELEMENT_ID}`)
         .append("svg")
-        .attr("width", width)
-        .attr("height", height)
-        .attr("viewBox", `${-width / 2} ${-height / 2} ${width} ${height}`)
+        .attr("width", packingWidth)
+        .attr("height", packingHeight)
+        .attr("viewBox", `${-packingWidth / 2} ${-packingHeight / 2} ${packingWidth} ${packingHeight}`)  // Adjusted viewBox
         .style("display", "block")
         .style("background", "none")
         .style("cursor", "pointer")
@@ -92,7 +92,7 @@ function initPacking(root) {
 
     let view;
     const zoomTo = (v) => {
-        const k = width / v[2];
+        const k = packingWidth / v[2];
 
         view = v;
 
@@ -128,20 +128,3 @@ function initPacking(root) {
             .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

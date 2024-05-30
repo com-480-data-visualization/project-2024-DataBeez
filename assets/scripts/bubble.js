@@ -35,12 +35,12 @@ function updateChart(continent) {
 // Function to draw the bubble chart
 function drawBubbleChart(dataArray) {
     // Set up the SVG container
-    const width = 800;
-    const height = 600;
+    const bubbleChartWidth = 800;  // Renamed from width to bubbleChartWidth
+    const bubbleChartHeight = 600; // Renamed from height to bubbleChartHeight
     d3.select('#type_event_continent').selectAll('*').remove(); // Clear previous chart
     const svg = d3.select('#type_event_continent').append('svg')
-        .attr('width', width)
-        .attr('height', height);
+        .attr('width', bubbleChartWidth)
+        .attr('height', bubbleChartHeight);
 
     // Set up the simulation with forces to make bubbles collide
     const scale = d3.scaleSqrt()
@@ -49,14 +49,14 @@ function drawBubbleChart(dataArray) {
 
     const simulation = d3.forceSimulation(dataArray)
         .force('charge', d3.forceManyBody().strength(15))
-        .force('center', d3.forceCenter(width / 2, height / 2))
+        .force('center', d3.forceCenter(bubbleChartWidth / 2, bubbleChartHeight / 2))
         .force('collision', d3.forceCollide().radius(d => scale(d.value) + 2));
 
     // Draw the bubbles
     const node = svg.selectAll('g')
         .data(dataArray)
         .enter().append('g')
-        .attr('transform', `translate(${width / 2}, ${height / 2})`); // Center the bubbles
+        .attr('transform', `translate(${bubbleChartWidth / 2}, ${bubbleChartHeight / 2})`); // Center the bubbles
 
     node.append('circle')
         .attr('r', d => scale(d.value))
@@ -128,4 +128,5 @@ buttons_bubble.on('click', function() {
     let value = d3.select(this).text();
     updateChart(value);
 });
+
 

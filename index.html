@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="assets/css/globe.css">
     <link rel="stylesheet" href="assets/css/button.css">
     <link rel="stylesheet" href="assets/css/mosaic.css">
+    <link rel="stylesheet" href="assets/css/impact.css">
 
 </head>
 <body>
@@ -157,14 +158,23 @@
             </div>
         </div>
 
-        <!-- Section 7: Distribution -->
-        <div class="section" id="distribution">
-            <div class="section-content">
-                <h1 class="title">Distribution</h1>
-                <div id="impact_analysis"></div>
-                <img src="assets/img/country_time_dist.jpg" alt="Sketch of the time dist of event" width="80%" class="type_of_event">
+         <!-- Section 7: Distribution -->
+        
+        <div class="section" id="distribution" style="padding: 20px;">
+            <h1 class="title" style="text-align: center;">Outcome of events of different populations</h1>
+            <div class="section-content" style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div style="flex: 1; padding-right: 20px;">
+                    <p>This interactive visualization shows the evolution of positive, negative, and mixed events over time. Use the slider to adjust the range of years displayed on the graph and observe how the occurrence of different event types has changed from 1600 to 2000.</p>
+                </div>
+                <div style="flex: 1;">
+                    <svg id="impact_analysis" width="300" height="200"></svg>
+                    <input type="range" id="yearRangeSlider" min="1800" max="2000" value="2000" class="slider" step="1" style="width: 100%; margin-top: 10px;">
+                    <span id="rangeDisplay">1800 - 2000</span>
+                </div>
             </div>
         </div>
+
+
 
         <!-- Section 8: Explaination Race-->
         <div class="section" id="exp_race">
@@ -218,10 +228,13 @@
     <script src="assets/lib/fullpage.js"></script>
     <script src="assets/lib/d3.v7.js"></script>
     <script src="//unpkg.com/globe.gl"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
     <!-- Custom JavaScript -->
     <script type="module" src='assets/scripts/main.js'></script>
     <script src='assets/scripts/globe.js'></script>
     <script src='assets/scripts/mosaic.js'></script>
+    <script src='assets/scripts/distribution.js'></script>
+
     <!-- <script src='assets/scripts/bubble.js'></script> -->
 </body>
 </html>
