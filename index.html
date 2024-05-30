@@ -160,21 +160,28 @@
 
          <!-- Section 7: Distribution -->
         
-        <div class="section" id="distribution" style="padding: 20px;">
-            <h1 class="title" style="text-align: center;">Outcome of events of different populations</h1>
+         <div class="section" id="distribution" style="padding: 20px;">
+            <style>
+                .title {
+                    text-align: center;
+                    font-size: 24px; /* Size of the font */
+                    font-family: 'Arial', sans-serif; /* Font family */
+                }
+            </style>
+            <h1 class="title" style="text-align: center;">Outcome of events on population over time</h1>
+            <div style="text-align: center; margin-bottom: 20px;">
+                <select id="countryDropdown">
+                    <option value="" disabled selected>Select a country</option>
+                </select>
+            </div>
             <div class="section-content" style="display: flex; justify-content: space-between; align-items: flex-start;">
-                <div style="flex: 1; padding-right: 20px;">
-                    <p>This interactive visualization shows the evolution of positive, negative, and mixed events over time. Use the slider to adjust the range of years displayed on the graph and observe how the occurrence of different event types has changed from 1600 to 2000.</p>
-                </div>
                 <div style="flex: 1;">
-                    <svg id="impact_analysis" width="300" height="200"></svg>
+                    <svg id="impact_analysis" width="600" height="400"></svg>
                     <input type="range" id="yearRangeSlider" min="1800" max="2000" value="2000" class="slider" step="1" style="width: 100%; margin-top: 10px;">
                     <span id="rangeDisplay">1800 - 2000</span>
                 </div>
             </div>
-        </div>
-
-
+        </div>        
 
         <!-- Section 8: Explaination Race-->
         <div class="section" id="exp_race">

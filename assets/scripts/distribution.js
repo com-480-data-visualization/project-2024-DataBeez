@@ -7,6 +7,20 @@ const eventColors = {
 
 // Load the CSV file
 d3.csv('data/modified_data.csv').then(function(data) {
+    // Unique countries for dropdown
+    const countries = Array.from(new Set(data.map(d => d.Country))).sort();
+    const countryDropdown = document.getElementById('countryDropdown');
+    let defaultOption = document.createElement('option');
+    defaultOption.text = "Select a country";
+    defaultOption.value = "";
+    countryDropdown.appendChild(defaultOption);
+
+    countries.forEach(country => {
+        let option = document.createElement('option');
+        option.value = country;
+        option.text = country;
+        countryDropdown.appendChild(option);
+    });
     // Filter out invalid data and future years
     data = data.filter(d => {
         const year = parseInt(d.Year);
@@ -85,14 +99,64 @@ d3.csv('data/modified_data.csv').then(function(data) {
     slider.addEventListener('input', function() {
         const maxYear = +this.value;
         const minYear = maxYear - 100;
-        x.domain([minYear, maxYear]);
-        xAxis.call(d3.axisBottom(x).tickFormat(d3.format("d")));
-        const filteredData = yearData.filter(d => d.year >= minYear && d.year <= maxYear);
-        drawLines(filteredData);
+
+        updateVisualization(currentCountry, minYear, maxYear);
         document.getElementById('rangeDisplay').innerText = `${minYear} - ${maxYear}`;
     });
+
+    // Event listener for the dropdown
+    let currentCountry = null; // This will store the currently selected country
+
+    countryDropdown.addEventListener('change', function() {
+        currentCountry = this.value;
+        updateVisualization(currentCountry);
+    });
+
+    function updateVisualization(selectedCountry = null, minYear = 700, maxYear = 2023) {
+        // Filter data based on country if selected, else use whole dataset
+        let filteredData = selectedCountry ? data.filter(d => d.Country === selectedCountry) : data;
+    
+        // Further filter the data based on the year range
+        filteredData = filteredData.filter(d => {
+            const year = parseInt(d.Year);
+            return year >= minYear && year <= maxYear;
+        });
+    
+        // Process the data similarly as before
+        const countsByYear = d3.rollups(filteredData, v => v.length, d => d.Year, d => d.Outcome);
+        const yearData = countsByYear.map(([year, outcomes]) => {
+            const yearObj = { year: parseInt(year) };
+            outcomes.forEach(([outcome, count]) => {
+                yearObj[outcome] = count;
+            });
+            return yearObj;
+        });
+    
+        yearData.sort((a, b) => a.year - b.year);
+        
+        // Update the domain for the x-axis and redraw the lines
+        x.domain([minYear, maxYear]);
+        xAxis.call(d3.axisBottom(x).tickFormat(d3.format("d")));
+        
+        drawLines(yearData);
+    }
+    
+    
+
+// You will need to update the existing slider and drawing logic to accommodate dynamic changes.
+
 }).catch(function(error) {
     console.error("Error loading or processing data:", error);
 });
+
+
+
+
+
+
+
+
+
+
 
 
