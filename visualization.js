@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     d3.csv('data/processed_graph_data.csv').then(function(data) {
         // Filter data for Africa
-        const filteredData = data.filter(d => d.Continent === 'Africa');
+        const filteredData = data.filter(d => d.Continent === 'North America');
         console.log("Filtered Data:", filteredData);
 
         // Process events data
@@ -46,10 +46,10 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("Parsed categories for event:", parsedCategories);
 
             const description = `
-                <strong>Name:</strong> ${event['Name of Incident']}<br>
-                <strong>Date:</strong> ${event['Date']} ${event['Month']} ${event['Year']}<br>
-                <strong>Impact:</strong> ${event['Impact']}<br>
-                <strong>Affected Population:</strong> ${event['Affected Population']}
+                <strong style="color: red;">Name:</strong> ${event['Name of Incident']}<br>
+                <strong style="color: red;">Date:</strong> ${event['Date']} ${event['Month']} ${event['Year']}<br>
+                <strong style="color: red;">Impact:</strong> ${event['Impact']}<br>
+                <strong style="color: red;">Affected Population:</strong> ${event['Affected Population']}
             `;
 
             // Log matching process
@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .style('font', '14px sans-serif') // Increased font size
             .style('font-weight', 'bold') // Bold text
             .style('background', 'lightsteelblue')
-            .style('border', '1px solid #000')
+            .style('border', '2px solid red') // Red border
             .style('border-radius', '8px')
             .style('pointer-events', 'none')
             .style('opacity', 0);
