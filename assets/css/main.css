@@ -8,7 +8,6 @@
 
 /* Global styles */
 body {
-    font-family: 'Arial', sans-serif;
     font-size: 1rem;
     line-height: 1.6;
     color: #e4e4e4;
@@ -31,9 +30,9 @@ body {
 
 /*Sytle for the titles and text*/
 .title {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .title.main {
@@ -42,6 +41,7 @@ body {
 }
 
 .text {
+    font-family: 'Lucida Console', Monospace;
     font-size: 1.4rem;
     color: #ffffff;
     padding: 0 100px;
@@ -53,6 +53,26 @@ body {
     padding: 0 200px;
     margin-bottom: 40px;
 }
+
+.slide {
+    display: flex;
+    align-items: center; /* Aligns items vertically at the center */
+    justify-content: space-between; /* Spreads content to occupy the entire horizontal space */
+    padding: 20px; 
+}
+
+.text-container {
+    width: 40%; /* Adjust based on preference and the amount of text */
+    padding-right: 20px; /* Adds some space between the text and the visualization */
+}
+
+.visualization-container {
+    width: 60%; /* Adjust so the total width sums up to 100% with the text container */
+    display: flex;
+    justify-content: center; /* Center visualization horizontally */
+    align-items: center; /* Center visualization vertically */
+}
+
 
 /* Styles for the logo */
 #logo {
