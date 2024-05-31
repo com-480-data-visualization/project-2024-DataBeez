@@ -48,10 +48,10 @@ function refreshGraph(continent) {
             parsedCategories = parsedCategories.map(cat => cat.trim());
 
             const description = `
-                <strong>Name:</strong> ${event['Name of Incident']}<br>
-                <strong>Date:</strong> ${event['Date']} ${event['Month']} ${event['Year']}<br>
-                <strong>Impact:</strong> ${event['Impact']}<br>
-                <strong>Affected Population:</strong> ${event['Affected Population']}
+                <strong style="color: red;">Name:</strong> ${event['Name of Incident']}<br>
+                <strong style="color: red;">Date:</strong> ${event['Date']} ${event['Month']} ${event['Year']}<br>
+                <strong style="color: red;">Impact:</strong> ${event['Impact']}<br>
+                <strong style="color: red;">Affected Population:</strong> ${event['Affected Population']}
             `;
 
             // Log matching process
@@ -90,10 +90,10 @@ function drawChart(events) {
     // Clear previous chart
     d3.select('#link-viz').selectAll('*').remove();
 
-    // Create SVG container
+    // Set up the SVG container
     const svg = d3.select('#link-viz').append('svg')
-        .attr('width', width)
-        .attr('height', height);
+            .attr('width', width)
+            .attr('height', height);
 
     // Create category circles
     const categoryGroup = svg.selectAll('g.category')
@@ -105,7 +105,8 @@ function drawChart(events) {
 
     categoryGroup.append('circle')
         .attr('r', 50)
-        .attr('fill', d => d.color);
+        .attr('fill', d => d.color)
+        .style('opacity', 0.7); // Set initial opacity to 0.5
 
     categoryGroup.append('text')
         .attr('font-size', '14px') // Increased font size
@@ -122,7 +123,8 @@ function drawChart(events) {
             const offsetY = d.y - centerY;
             return offsetY * 0.35; // Adjust the multiplier to control the distance
         })
-        .text(d => d.shortName);
+        .text(d => d.shortName)
+        .style('opacity', 0.7); // Set initial opacity to 0.3
 
     // Create force simulation with central anchor
     const simulation = d3.forceSimulation(events)
@@ -167,7 +169,7 @@ function drawChart(events) {
         .style('font', '14px sans-serif') // Increased font size
         .style('font-weight', 'bold') // Bold text
         .style('background', 'lightsteelblue')
-        .style('border', '1px solid #000')
+        .style('border', '2px solid red') // Red border
         .style('border-radius', '8px')
         .style('pointer-events', 'none')
         .style('opacity', 0);
@@ -183,6 +185,13 @@ function drawChart(events) {
         linkGroup
             .filter(edge => edge.event === d)
             .style('visibility', 'visible');
+
+        // Highlight related categories
+        categoryGroup.selectAll('circle')
+            .style('opacity', circle => d.categories.includes(circle) ? 1 : 0.7);
+
+        categoryGroup.selectAll('text')
+            .style('opacity', text => d.categories.includes(text) ? 1 : 0.7);
     });
 
     eventGroup.on('mouseout', function() {
@@ -191,6 +200,10 @@ function drawChart(events) {
 
         // Hide edges
         linkGroup.style('visibility', 'hidden');
+
+        // Reset category opacity
+        categoryGroup.selectAll('circle').style('opacity', 0.7);
+        categoryGroup.selectAll('text').style('opacity', 0.7);
     });
 
     // Update positions on each tick
@@ -222,7 +235,7 @@ function drawChart(events) {
         if (!event.active) simulation.alphaTarget(0);
         d.fx = null;
         d.fy = null;
-    }
+    }   
 }
 
 const buttons_bubble = d3.selectAll('#link_analysis .stadium-button');

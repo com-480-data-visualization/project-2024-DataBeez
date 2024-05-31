@@ -99,7 +99,7 @@ function showEventDetails(point) {
     infoPanel.innerHTML = `
         <h2><u>Event Details</u></h2>
         <strong><u>Event:</u></strong> ${point.label}<br/>
-        <strong><u>Year:</u></strong> ${point.year < 0 ? `${Math.abs(point.year)} BC` : point.year.toString()}<br/>
+        <strong><u>Year:</u></strong> ${point.year < 0 ? `${parseInt(Math.abs(point.year))} BC` : parseInt(point.year).toString()}<br/>
         <strong><u>Location:</u></strong> ${point.placeName}<br/>
         <strong><u>Type of Event:</u></strong> ${point.typeOfEvent}<br/>
         <strong><u>Impact:</u></strong> ${point.impact}<br/>
