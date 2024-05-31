@@ -1,0 +1,13 @@
+#link-viz {
+    width: 80%;
+    height: auto; /* Adjust the height as needed */
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20%;
+}
+
+#link-viz .round-buttons {
+    margin-top: 200px;
+    margin-bottom: 20px;
+}

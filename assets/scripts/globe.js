@@ -68,7 +68,7 @@ function updateGlobeData(century) {
     .pointColor(d => { // Set point color based on outcome
         switch(d.outcome.toLowerCase()) {
             case 'positive':
-                return 'green';
+                return '#228B22';
             case 'negative':
                 return 'red';
             case 'mixed':
