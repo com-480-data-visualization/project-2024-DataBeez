@@ -16,7 +16,7 @@ const PACKING_TEXT = {
 };
 
 const packingWidth = 700;  // Renamed from width to packingWidth
-const packingHeight = 800; // Renamed from height to packingHeight
+const packingHeight = 700; // Renamed from height to packingHeight
 
 d3.csv('data/modified_data.csv').then(function(data) {
     const filteredData = data.filter(d => d.Sentiment !== "Ongoing");

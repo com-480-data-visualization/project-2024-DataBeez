@@ -30,9 +30,16 @@ body {
 
 /*Sytle for the titles and text*/
 .title {
+    font-family: 'Arial', sans-serif;
     font-size: 4rem;
     font-weight: bold;
     margin-bottom: 40px;
+}
+
+h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 10px;
 }
 
 .title.main {
@@ -41,7 +48,6 @@ body {
 }
 
 .text {
-    font-family: 'Lucida Console', Monospace;
     font-size: 1.4rem;
     color: #ffffff;
     padding: 0 100px;
