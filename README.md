@@ -6,7 +6,7 @@
 | Jacquet-Francillon Elliot Philip| 316517 |
 | Hinard Killian | 312106 |
 
-[Milestone 1](./milestone1/milestone1.md) • [Milestone 2](./milestone2/milestone2.pdf) • [Milestone 3](#milestone-3)
+[Milestone 1](./milestone1/milestone1.md) • [Milestone 2](./milestone2/milestone2.pdf) • [Milestone 3](./milestone3/process_book.pdf)
 
 The website is available [here](https://com-480-data-visualization.github.io/project-2024-DataBeez/).
 
@@ -25,7 +25,7 @@ The website is available [here](https://com-480-data-visualization.github.io/pro
 
 ### Screencast
 
-The screencast is available [here]().
+The screencast is available [here](https://youtu.be/5FVTD-nCRGg).
 
 ### Technical setup
 
