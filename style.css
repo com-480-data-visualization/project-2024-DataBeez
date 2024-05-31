@@ -132,6 +132,15 @@ body {
     animation: floatAnimation 2s ease-in-out infinite alternate;
 }
 
+#visualization {
+    width: 100%;
+    height: 600px; /* Adjust the height as needed */
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
 /* Animation for the logo */
 @keyframes floatAnimation {
     0% {
