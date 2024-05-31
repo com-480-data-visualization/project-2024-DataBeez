@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const width = 800;
 const height = 600;
-const radius = 200; // Adjusted radius of the circle
+const radius = 200;
 
 // Define categories with positions and colors from colorMapping, including short names
 const categories = [
@@ -116,15 +116,15 @@ function drawChart(events) {
         .attr('dx', d => {
             const centerX = width / 2;
             const offsetX = d.x - centerX;
-            return offsetX * 0.5; // Adjust the multiplier to control the distance
+            return offsetX * 0.5;
         })
         .attr('dy', d => {
             const centerY = height / 2;
             const offsetY = d.y - centerY;
-            return offsetY * 0.35; // Adjust the multiplier to control the distance
+            return offsetY * 0.35;
         })
         .text(d => d.shortName)
-        .style('opacity', 0.7); // Set initial opacity to 0.3
+        .style('opacity', 0.7);
 
     // Create force simulation with central anchor
     const simulation = d3.forceSimulation(events)
@@ -238,6 +238,8 @@ function drawChart(events) {
     }   
 }
 
+
+// Add event listeners to buttons to select the right continent
 const buttons_bubble = d3.selectAll('#link_analysis .stadium-button');
 buttons_bubble.on('click', function() {
     buttons_bubble.classed('clicked', false);
