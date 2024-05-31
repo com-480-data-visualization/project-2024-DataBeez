@@ -64,3 +64,24 @@
     text-align: center;
     width: 100%; /* Full width for easier interaction */
 }
+
+#infoPanel p {
+    text-align: center;
+    margin: 20%; /* Center the text vertically */
+    margin-top: 25%;
+    margin-bottom: 5%;
+}
+
+#legend {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    margin-top: 30%;
+    margin-left: 35%;
+}
+
+#legend text {
+    font-size: 20px; /* Adjust the font size as needed */
+    text-align: center;
+    fill: aliceblue;
+}

@@ -41,20 +41,22 @@
             <div class="section-content">
                 <h1 class="title">GLOBAL EVENT</h1>
                 <p class="text">
-                    We are going to begin our exploration of the dataset by creating an interactive visualization. This visualization 
-                    will feature a 3D globe of the Earth, designed to enhance your user experience by allowing for dynamic interaction 
-                    with the data. You will have the ability to select between different viewing modes: one where event markers are 
+                    We are going to begin our exploration of the dataset with an interactive visualization on a 3D globe. This visualization 
+                    features a 3D globe of the Earth, designed to enhance your user experience by allowing for dynamic interaction 
+                    with the data. You have the ability to select between different viewing modes: one where event markers are 
                     displayed on the globe, color-coded according to their impact, and another that shows a heat map representing the 
-                    temporal and geographical distribution of events worldwide.
+                    geographical distribution of events worldwide in our dataset.
                 </p>
                 <p class="text">
-                    In the first mode, each marker's color will reflect the magnitude of the event's impact, providing a quick visual 
-                    assessment of severity. You can hover your mouse over any marker to receive a popup with more detailed information 
-                    about that particular event, including its nature, consequences, and any significant data points related to the event.
+                    In the first mode, each marker's color reflect the magnitude of the event's impact, providing a quick visual 
+                    assessment of severity. You can click on any marker to receive more detailed information 
+                    about that particular event, including its nature, consequences, etc.
                 </p>
                 <p class="text">
-                    Alternatively, the heat map mode offers a time-lapse feature, allowing you to observe how the frequency and location 
-                    of events have evolved over time. This mode aims to provide a clearer understanding of trends and patterns, helping 
+                    Alternatively, the heat map mode allows you to observe how the frequency and location 
+                    of events are distributed around the globe. You can hover your mouse on any county to get the name of the country and the 
+                    number of event we have in our dataset for this country. 
+                    This mode aims to provide a clearer understanding of trends and patterns, helping 
                     identify hotspots of activity or shifts in the occurrence of events globally.
                 </p>
             </div>
@@ -92,7 +94,7 @@
                         </div>
                         <div id="controls">
                             <h2><u>Timeline Control</u></h2> <!-- Title for the controls section -->
-                            <input type="range" id="yearSlider" min="1" max="21" value="21" step="1">
+                            <input type="range" id="yearSlider" min="-26" max="21" value="21" step="1">
                             <p>Century: <span id="centuryDisplay">21th</span></p>
                         </div>
                     </div>
@@ -180,27 +182,6 @@
                     <input type="range" id="yearRangeSlider" min="1800" max="2000" value="2000" class="slider" step="1" style="width: 100%; margin-top: 10px;">
                     <span id="rangeDisplay">1800 - 2000</span>
                 </div>
-            </div>
-        </div>        
-
-        <!-- Section 8: Explaination Race-->
-        <div class="section" id="exp_race">
-            <div class="section-content">
-                <h1 class="title">Race</h1>
-                <p class="text">
-                    Our final visualization offers a captivating and dynamic experience through a "race bar chart," where you can 
-                    visually track the evolution of the number of events over time through different countries. This interactive 
-                    feature animates the progression of events, highlighting how different countires has the history changed through their
-                    timeline.
-                </p>
-            </div>
-        </div>
-
-        <!--Race-->
-        <div class="section" id="race">
-            <div class="section-content">
-                <h1 class="title">Race</h1>
-                <img src="assets/img/number_event_race.jpg" alt="Sketch of the Race" width="70%" class="type_of_event">
             </div>
         </div>
         
