@@ -98,7 +98,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         categoryGroup.append('circle')
             .attr('r', 50)
-            .attr('fill', d => d.color);
+            .attr('fill', d => d.color)
+            .style('opacity', 0.3); // Set initial opacity to 0.3
 
         categoryGroup.append('text')
             .attr('font-size', '14px') // Increased font size
@@ -114,7 +115,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const offsetY = d.y - centerY;
                 return offsetY * 0.35; // Adjust the multiplier to control the distance
             })
-            .text(d => d.shortName);
+            .text(d => d.shortName)
+            .style('opacity', 0.3); // Set initial opacity to 0.3
 
         // Create force simulation with central anchor
         const simulation = d3.forceSimulation(events)
@@ -175,6 +177,13 @@ document.addEventListener('DOMContentLoaded', function() {
             linkGroup
                 .filter(edge => edge.event === d)
                 .style('visibility', 'visible');
+
+            // Highlight related categories
+            categoryGroup.selectAll('circle')
+                .style('opacity', circle => d.categories.includes(circle) ? 1 : 0.3);
+
+            categoryGroup.selectAll('text')
+                .style('opacity', text => d.categories.includes(text) ? 1 : 0.3);
         });
 
         eventGroup.on('mouseout', function() {
@@ -183,6 +192,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Hide edges
             linkGroup.style('visibility', 'hidden');
+
+            // Reset category opacity
+            categoryGroup.selectAll('circle').style('opacity', 0.3);
+            categoryGroup.selectAll('text').style('opacity', 0.3);
         });
 
         // Update positions on each tick
